@@ -1,14 +1,6 @@
 #!/usr/bin/python3
 
-val = 0
-b = 90
-
-for num in range(1, 27):
-    if num % 2 == 0:
-        val = b
-    else:
-        val = 123 - num
-
-        b -= 1
-
-        print(chr(val), end="")
+for c in range(122, 96, -1):
+    if c % 2 != 0:
+        c = (c - 32)
+        print("{}".format(chr(c)), end="")
