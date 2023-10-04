@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 
-for n in range(0, 99):
-    print(f"{n} = {hex(n)}")
+for num in range(0, 99):
+    if num == 113 or num == 101:
+        continue
+    print("{} = {}".format(num, hex(num)))
