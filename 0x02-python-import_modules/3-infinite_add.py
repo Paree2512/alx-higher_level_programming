@@ -8,3 +8,4 @@ if __name__ == "__main__":
 
     for i in range(arg_count):
         result += (int(sys.argv[i + 1]))
+    print("{:d}".format(result))
