@@ -1,0 +1,49 @@
+#!/usr/bin/python3
+
+"""
+Create a Square class that defines a square by private instance attribute: size
+And a Public instance method: def area(self): that returns the current square area
+Methods Getter and Setter properties for size. property def size(self): to retrieve it
+property setter def size(self, value): to set it: Method my_print prints the square using "#".
+"""
+
+class Square:
+    """
+    Variables instantiation self and size.
+    Raise errors if conditions are not met.
+    then print square using '#'.
+    """
+    def __init__(self, size=0):
+        # Initialize private attribute
+        self.__size = size
+
+    @property  # property to retrieve size (Getter method)
+    def size(self):
+        return self.__size
+
+    @size.setter  # Setter method for size
+    def size(self, value):
+        # Check if value is an integer
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+
+        # Check if value is >= 0
+        if value < 0:
+            raise ValueError("size must be >= 0")
+
+        # Update the private instance attribute
+        self.__size = value
+
+    def area(self):
+        """
+        Calculates the area of square
+        Returns: area
+        """
+        return (self.__size ** 2)
+
+    def my_print(self):
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__size):
+                print("#" * self.__size)
