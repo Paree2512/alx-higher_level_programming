@@ -19,6 +19,6 @@ def list_division(my_list_1, my_list_2, list_length):
             divide = 0
 
         finally:
-            list_divide.append(div)
+            list_divide.append(divide)
 
     return list_divide
