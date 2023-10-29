@@ -1,0 +1,55 @@
+# Setup: Import the module and function
+>>> mod = __import__("3-say_my_name")
+>>> say_my_name = mod.say_my_name
+
+# Function Documentation
+>>> len(mod.__doc__) > 1
+True
+
+# Function Documentation
+>>> len(say_my_name.__doc__) > 1
+True
+
+# Test Cases
+
+# Valid input with both first and last names😎
+>>> first_name = "Ayomide"
+>>> last_name = "Kayode"
+>>> say_my_name(first_name, last_name)
+My name is Ayomide Kayode
+
+>>> first_name = "Johnny"
+>>> last_name = "Bravo"
+>>> say_my_name(first_name, last_name)
+My name is Johnny Bravo
+
+# Valid input with only the first name
+>>> first_name = "Cobby"
+>>> say_my_name(first_name)
+My name is Cobby 
+
+# Invalid input: first_name is not a string (invalid)
+>>> first_name = 123
+>>> last_name = "Olix"
+>>> say_my_name(first_name, last_name)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Invalid input: last_name is not a string (invalid)
+>>> first_name = "Stephen"
+>>> last_name = None
+>>> say_my_name(first_name, last_name)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+# Invalid input: Both first_name and last_name are not strings (invalid)
+>>> first_name = 123
+>>> last_name = None
+>>> say_my_name(first_name, last_name)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# run test case file with `python3 -m doctest -v ./tests/3-say_my_name.txt`
